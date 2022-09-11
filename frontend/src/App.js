@@ -1,10 +1,14 @@
 
 import './App.css';
+import RoutesApp from './layouts/RoutesApp';
 
 function App() {
+
+  // const role = 'admin';
+
   return (
     <div className="App">
-      Holaaa
+      <RoutesApp />
     </div>
   );
 }

@@ -1,0 +1,14 @@
+
+/*?----------------- DISEÑO PARA EL NAVBAR--------------------*/
+
+.navBarMenu{
+    /* position: fixed !important; */
+    z-index: 100;
+    font-family: 'Oswald', sans-serif;
+}
+
+#linkNav{ padding: 0 10px; transition: background-color .3s;}
+
+#linkNav:hover{
+    background-color: rgb(61, 61, 61);
+}
