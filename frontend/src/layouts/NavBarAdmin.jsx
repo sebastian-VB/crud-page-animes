@@ -27,6 +27,9 @@ function NavBarAdmin (){
               <li className="nav-item">
                 <Link className='nav-link text-white' to="/agregar-usuarios-ad" id='linkNav'>AGREGAR USUARIOS</Link>
               </li>
+              <li className="nav-item">
+                <a className='nav-link text-white' href="http://localhost:3000/" id='linkNav'>Salir</a>
+              </li>
             </ul>
           </div>
         </div>

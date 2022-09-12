@@ -1,14 +1,15 @@
 
 import express from 'express';
+import userRouter from './routers/userRouter.routes.js';
 import cors from 'cors';
-import userRouter from './routers/userRouter.js';
 
 const app = express();
 
 app.set('PORT', 4000);
 
+app.use(cors());
 app.use(express.json());
 
-app.use('/', userRouter);
+app.use('/lr', userRouter);
 
 export default app;

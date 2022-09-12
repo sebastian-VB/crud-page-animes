@@ -21,6 +21,9 @@ function NavBarUser (){
               <li className="nav-item">
                 <Link className='nav-link text-white' to="/perfil-us" id='linkNav'>PERFIL</Link>
               </li>
+              <li className="nav-item">
+                <a className='nav-link text-white' href="/http://localhost:3000/" id='linkNav'>SALIR</a>
+              </li>
             </ul>
           </div>
         </div>
