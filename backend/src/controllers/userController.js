@@ -66,18 +66,89 @@ const registerUser = (req, res)=>{
 
 const listUser = (req, res)=>{
 
+    let users = [];
+
+    UserModel.findAll().then(user =>{
+
+        user.forEach(userOnly => {
+            users.push({
+                id: userOnly.id,
+                nombre: userOnly.nombre,
+                usuario: userOnly.usuario
+            });
+        });
+
+        return res.json(users);
+
+    }).catch(error => {
+        return res.status(500).json(error);
+    });
+
 }; 
 
 const listOnlyUser = (req, res)=>{
     
+    const {id} = req.params;
+
+    if(!id) return res.status(404).json({ msg: 'Parámetros mal enviados' });
+
+    UserModel.findOne({ 
+        where: { id: id} 
+
+    }).then(user =>{
+
+        if(!user) return res.status(404).json({ msg: 'Usuario no encontrado' });
+
+        return res.json({ user: {
+            id: user.id, 
+            nombre: user.nombre, 
+            usuario: user.usuario,
+        }});
+
+    }).catch(error =>{
+        return res.status(500).json(error);
+    });
 };
 
 const deleteUser = (req, res)=>{
     
+    const {id} = req.params;
+
+    if(!id) return res.status(404).json({ msg: 'Parámetros mal enviados' });
+
+    UserModel.destroy({
+        where: { id: id }
+
+    }).then(user =>{
+
+        if(!user) return res.status(404).json({ msg: 'Usuario no encontrado' });
+
+        return res.status(200).json({ masgCo: 'Usuario eliminado correctamente' });
+
+    }).catch(error =>{
+        return res.status(500).json(error);
+    });
 };
 
 const updateUser = (req, res)=>{
     
+    const {id} = req.params;
+    const { nombre, usuario, contrasena } = req.body;
+
+    let passwordH = bcrypt.hashSync(contrasena, Number.parseInt(config.rounds));
+
+    UserModel.update({ nombre, usuario, contrasena: passwordH }, {
+        where: { id: id }
+
+    }).then(user =>{
+
+        if(!user) return res.status(404).json({ msg: 'Usuario no encontrado' });
+
+        return res.status(200).json({ masgCo: 'Usuario actualizado correctamente' });
+
+    }).catch(error =>{
+        return res.status(500).json(error);
+    });
 };
 
 export default {

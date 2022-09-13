@@ -1,11 +1,17 @@
 
 import React from 'react';
+// import axios from 'axios';
+// import '../styleSheets/diseñoGeneral.css';
 
-function PerfilUsuario (){
+function PerfilUsuario ({ idUser }){
+
+  //funcion para obtener usuario
+
+  //funcion para actualizar usuario
 
   return(
     <div>
-      PerfilUsuario
+      PerfilUsuario {idUser}
     </div>
   );
 }

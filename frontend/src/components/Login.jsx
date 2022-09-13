@@ -2,12 +2,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../styleSheets/diseñoGeneral.css';
+import MsgError from './MsgError';
 
 function Login({ loginF }){
 
   //estados para los campos del login  
   const [usuario, setUsuario] = useState('');
   const [contrasena, setContrasena] = useState('');
+  const [loginError, setLoginError] = useState(false);
+  const [msgError, setMsgError] = useState('');
 
   //estados para los campos de register
   const [nombreR, setNombreR] = useState('');  
@@ -18,6 +21,7 @@ function Login({ loginF }){
 
   const loginUser = async(e)=>{
     e.preventDefault();
+    let band = false, error = '';
 
     try{
       const response = await axios.post('http://localhost:4000/lr/api/singin', { usuario, contrasena });
@@ -26,8 +30,13 @@ function Login({ loginF }){
       loginF(!cambio, response.data.user);
 
     }catch(err){
+      band = true;
+      error = err.response.data.msg;
       console.log(err.response.data);
+
     }
+    setLoginError(band);
+    setMsgError(error);
   }
 
   const registerUser = async(e)=>{
@@ -42,6 +51,7 @@ function Login({ loginF }){
 
     }catch(err){
       console.log(err.response.data);
+      
     }
 
   };
@@ -64,6 +74,7 @@ function Login({ loginF }){
                 <i className="fa-solid fa-key"></i>
                 <input className='ls-inp' type="password" name="password" placeholder='password' onChange={e => setContrasena(e.target.value)} value={contrasena} required={true} />
               </div>
+                {loginError ? <MsgError msg={msgError} /> : ''}
               <div>
                 <button type="submit" className="btn btn-lg" id='ls-btn' >Ingresar</button>
               </div>
@@ -106,11 +117,6 @@ function Login({ loginF }){
                                   <button type="submit" className='btn btn-lg' id='ls-btn2'>Registrarme</button>
                               </div>
                           </form>
-                          {/* <div className='ls-foot'>
-                              <p>¿Ya tienes una cuenta?</p>
-                              <Link to='/' className='btn btn-lg' id='ls-link'>Iniciar Sesion</Link>
-                              
-                          </div> */}
                       </div>
                   </div>
                   
@@ -121,14 +127,6 @@ function Login({ loginF }){
           </div>
         </div>    
       </div>
-
-      
-
-      {/* <section>
-        <Outlet>
-
-        </Outlet>
-      </section> */}
 
     </div>
   );

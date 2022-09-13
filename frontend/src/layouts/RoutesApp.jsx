@@ -21,7 +21,7 @@ function RoutesApp(){
 
   const updateLogin = (activar, aoru)=>{
     setLogin(activar);
-    setAdminOuser(aoru)
+    setAdminOuser(aoru);
   }
 
   return(
@@ -59,7 +59,7 @@ function RoutesApp(){
 
                   <Route path='/' element={ <PrincipalUser /> } />
                   <Route path='/listar-animes-us' element={ <ListarAnimes /> } />
-                  <Route path='/perfil-us' element={ <PerfilUsuario /> } />
+                  <Route path='/perfil-us' element={ <PerfilUsuario idUser={adminOuser.id} /> } />
 
                   <Route path='*' element={ <Navigate replace to='/' /> } /> 
                 
