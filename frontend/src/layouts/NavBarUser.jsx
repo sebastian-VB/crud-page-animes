@@ -3,7 +3,7 @@ import React from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import '../styleSheets/diseñoGeneral.css';
 
-function NavBarUser (){
+function NavBarUser ({ userName }){
 
   return(
     <>
@@ -13,7 +13,8 @@ function NavBarUser (){
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
+          <div className="collapse navbar-collapse" id="navBarNav">
+
             <ul className="navbar-nav ">
               <li className="nav-item">
                 <Link className='nav-link text-white' to="/listar-animes-us" id='linkNav'>LISTAR ANIMES</Link>
@@ -25,6 +26,12 @@ function NavBarUser (){
                 <a className='nav-link text-white' href="http://localhost:3000/" id='linkNav'>SALIR</a>
               </li>
             </ul>
+
+            <div className='userC'>
+              <div className='userName'>{ userName }</div>
+              <div className='active'></div>
+            </div>
+
           </div>
         </div>
       </nav>

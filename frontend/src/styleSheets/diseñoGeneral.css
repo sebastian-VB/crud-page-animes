@@ -16,8 +16,15 @@
 
 .navBarMenu {
     background-color: #0c0a18;
-  }
+
+}
   
+#navBarNav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .navbar-toggler {
     background-color: #3d3a5661 !important;
 }
@@ -41,6 +48,21 @@
 .nav-link:hover {
     color: #fe8266 !important;
     transition: 0.3s;
+}
+
+.userC{
+    height: 100%;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.active{
+    width: 12px;
+    height: 12px;
+    background-color: #00ffb3;
+    border-radius: 50%;
 }
 
 /*?----------------- DISEÑO PARA LA PAGINA PRINCIPAL--------------------*/
@@ -174,7 +196,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 25px;
 }
 
 /* .div-input{
@@ -214,7 +236,7 @@
     color: #fcbb8558;
 }
 
-#ls-btn {
+#ls-btn, #ls-btn2 {
     margin-top: 10px;
     background-color: #ff8826;
     color: #fff;

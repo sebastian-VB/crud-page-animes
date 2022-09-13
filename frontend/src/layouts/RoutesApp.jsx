@@ -37,7 +37,7 @@ function RoutesApp(){
                 <Route path='*' element={ <Navigate replace to='/' /> } /> 
               </Route>
             :
-              adminOuser === 'admin'
+              adminOuser.rol === 'admin'
               ?
                 <Route path='/' element={ <NavBarAdmin /> }>
 
@@ -55,7 +55,7 @@ function RoutesApp(){
                 
                 </Route>
               :
-                <Route path='/' element={ <NavBarUser /> }>
+                <Route path='/' element={ <NavBarUser  userName={adminOuser.nombre} /> }>
 
                   <Route path='/' element={ <PrincipalUser /> } />
                   <Route path='/listar-animes-us' element={ <ListarAnimes /> } />

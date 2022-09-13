@@ -1,13 +1,18 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Link, Outlet } from 'react-router-dom';
 import '../styleSheets/diseñoGeneral.css';
 
 function Login({ loginF }){
 
+  //estados para los campos del login  
   const [usuario, setUsuario] = useState('');
   const [contrasena, setContrasena] = useState('');
+
+  //estados para los campos de register
+  const [nombreR, setNombreR] = useState('');  
+  const [usuarioR, setUsuarioR] = useState('');
+  const [contrasenaR, setContrasenaR] = useState('');
 
   let cambio = true;
 
@@ -17,15 +22,29 @@ function Login({ loginF }){
     try{
       const response = await axios.post('http://localhost:4000/lr/api/singin', { usuario, contrasena });
       // console.log(response.data.token);
-      // console.log(usuario);
-      // console.log(contrasena);
-      loginF(!cambio, response.data.user.rol);
+      // console.log(response.data.user);
+      loginF(!cambio, response.data.user);
+
+    }catch(err){
+      console.log(err.response.data);
+    }
+  }
+
+  const registerUser = async(e)=>{
+
+    try{
+      const response = await axios.post('http://localhost:4000/lr/api/singup/', {
+        nombre: nombreR,
+        usuario: usuarioR,
+        contrasena: contrasenaR
+      });
+      console.log(response.data);
 
     }catch(err){
       console.log(err.response.data);
     }
 
-  }
+  };
 
   return(
     <div className='ls-back'>
@@ -46,9 +65,7 @@ function Login({ loginF }){
                 <input className='ls-inp' type="password" name="password" placeholder='password' onChange={e => setContrasena(e.target.value)} value={contrasena} required={true} />
               </div>
               <div>
-                {/* <Link to='/' className='btn btn-lg' id='ls-btn'>Ingresar</Link> */}
                 <button type="submit" className="btn btn-lg" id='ls-btn' >Ingresar</button>
-                {/* <button onClick='/listar' type="submit">Iniciar Sesion</button> */}
               </div>
             </form>
             <div className='ls-foot'>
@@ -71,30 +88,29 @@ function Login({ loginF }){
               <div className='ls-container-2'>
                 <div className='ls-banner-2'></div>
                   <div className='ls-info'>
-                      {/* <div className='ls-img ls-img-2'></div> */}
                       <div className='ls-data ls-data2'>
-                          <form id='forRegistrar'>
+                          <form id='forRegistrar' onSubmit={registerUser}>
                               <div className='username div-input'>
                                   <i className="fa-solid fa-user"></i>
-                                  <input className='ls-inp' type="text" name="username" placeholder='username' required />
+                                  <input className='ls-inp' type="text" name="username" placeholder='username' required onChange={ e=>setNombreR(e.target.value)} value={nombreR} />
                               </div>
                               <div className='email div-input'>
-                                  <i class="fa-solid fa-envelope"></i>
-                                  <input className='ls-inp' type="email" name="email" placeholder='example@email.com' required />
+                                  <i className="fa-solid fa-envelope"></i>
+                                  <input className='ls-inp' type="email" name="email" placeholder='example@email.com' required onChange={ e=> setUsuarioR(e.target.value)} value={usuarioR} />
                               </div>
                               <div className='password div-input'>
                                   <i className="fa-solid fa-key"></i>
-                                  <input className='ls-inp' type="password" name="password" placeholder='password' required />
+                                  <input className='ls-inp' type="password" name="password" placeholder='password' required onChange={ e=> setContrasenaR(e.target.value)} value={contrasenaR} />
                               </div>
                               <div>
-                                  <Link to='/login' className='btn btn-lg' id='ls-btn'>Registrarme</Link>
-                                  {/* <button onClick='/listar' type="submit">Iniciar Sesion</button> */}
+                                  <button type="submit" className='btn btn-lg' id='ls-btn2'>Registrarme</button>
                               </div>
                           </form>
-                          <div className='ls-foot'>
+                          {/* <div className='ls-foot'>
                               <p>¿Ya tienes una cuenta?</p>
-                              <Link to='/login' className='btn btn-lg' id='ls-link'>Iniciar Sesion</Link>
-                          </div>
+                              <Link to='/' className='btn btn-lg' id='ls-link'>Iniciar Sesion</Link>
+                              
+                          </div> */}
                       </div>
                   </div>
                   
@@ -108,11 +124,11 @@ function Login({ loginF }){
 
       
 
-      <section>
+      {/* <section>
         <Outlet>
 
         </Outlet>
-      </section>
+      </section> */}
 
     </div>
   );
