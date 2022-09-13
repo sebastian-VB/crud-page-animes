@@ -7,7 +7,7 @@ function NavBarUser (){
 
   return(
     <>
-      <nav className="navbar navbar-expand-lg bg-dark w-100 navBarMenu">
+      <nav className="navbar navbar-expand-lg w-100 navBarMenu">
         <div className="container-fluid">
           <Link className="navbar-brand text-white"to='/' id='linkNav'>USER</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,7 +22,7 @@ function NavBarUser (){
                 <Link className='nav-link text-white' to="/perfil-us" id='linkNav'>PERFIL</Link>
               </li>
               <li className="nav-item">
-                <a className='nav-link text-white' href="/http://localhost:3000/" id='linkNav'>SALIR</a>
+                <a className='nav-link text-white' href="http://localhost:3000/" id='linkNav'>SALIR</a>
               </li>
             </ul>
           </div>

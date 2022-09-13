@@ -1,14 +1,248 @@
 
-/*?----------------- DISEÑO PARA EL NAVBAR--------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Finlandica:wght@400;500;600;700&display=swap");
 
-.navBarMenu{
-    /* position: fixed !important; */
-    z-index: 100;
-    font-family: 'Oswald', sans-serif;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-#linkNav{ padding: 0 10px; transition: background-color .3s;}
+#root {
+  font-family: "Finlandica", sans-serif;
+  background: #131026;
+  color: #fff;
+}
+/*?----------------- DISEÑO PARA EL NAVBAR--------------------*/
 
-#linkNav:hover{
-    background-color: rgb(61, 61, 61);
+.navBarMenu {
+    background-color: #0c0a18;
+  }
+  
+.navbar-toggler {
+    background-color: #3d3a5661 !important;
+}
+
+.navbar-toggler:hover {
+    background-color: #605d7c61 !important;
+}
+
+#icon {
+    background-image: url(../images/logo.png);
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 61px;
+}
+
+#icon:hover {
+    transform: scale(0.95);
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #fe8266 !important;
+    transition: 0.3s;
+}
+
+/*?----------------- DISEÑO PARA LA PAGINA PRINCIPAL--------------------*/
+
+#banner {
+    background-image: url(../images/banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 89vh;
+    display: flex;
+  }
+  
+  .containerPrincipal {
+    position: absolute;
+    top: 40%;
+    right: 5%;
+  }
+  
+  .titleH1 {
+    text-shadow: 0 0 5px #030209;
+    font-size: 100px;
+    font-weight: 600;
+    color: #c6c6c6;
+    margin-bottom: 45px;
+  }
+  
+  #btnPrincipal {
+    border-radius: 40px;
+    background-color: #c6c6c6;
+    color: #030209;
+    font-weight: 500;
+  }
+  
+  #btnPrincipal:hover {
+    background-color: #9f331e;
+    color: #fff;
+  }
+
+  /*?----------------- DISEÑO PARA EL LOGIN Y REGISTRO--------------------*/
+
+.titleLogin{
+    text-align: center;
+}
+
+.ls-back {
+    background-image: url(../images/ls-back-2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ls-back-2 {
+    background-image: url(../images/ls-back.jpg);
+}
+
+#modalC{
+    height: 700px;
+    background-color: #0c0a18e6;
+}
+
+.ls-container {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    background-color: #0c0a18e6;
+    height: 60%;
+    width: 50%;
+}
+
+.ls-container-2 {
+    display: grid;
+    grid-template-rows: 100% 100%;
+    /* flex-direction: column; */
+    background-color: #0c0a18e6;
+    width: 100%;
+}
+
+.ls-banner {
+    background-image: url(../images/login-banner.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: -19em;
+}
+
+.ls-banner-2 {
+    background-image: url(../images/signup-banner.gif);
+    background-size: cover;
+    /* width: 100%; */
+    /* height: 500px; */
+}
+
+.ls-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.ls-img {
+    background-image: url(../images/anime-user.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+}
+
+.ls-img-2 {
+    background-image: url(../images/anime-user-2.png);
+}
+
+.ls-data {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.ls-data2{
+    margin-top: 50px;
+}
+
+#ls-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 5px 0;
+}
+
+#forRegistrar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* .div-input{
+    margin-bottom: 1.5%;
+} */
+
+.username,
+.password,
+.email {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.username i,
+.password i,
+.email i {
+    font-size: 20px;
+    color: #ff933b;
+}
+
+.ls-inp {
+    background-color: transparent;
+    width: 60%;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    padding: 3px 8px;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    border-left: 1px solid #fff;
+}
+
+.ls-inp::placeholder {
+    color: #fcbb8558;
+}
+
+#ls-btn {
+    margin-top: 10px;
+    background-color: #ff8826;
+    color: #fff;
+    border-radius: 40px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+#ls-btn:hover {
+    background-color: #ff7708;
+}
+
+.ls-foot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.ls-foot p {
+    margin: 0;
+}
+
+#ls-link {
+    font-size: 17px;
+    color: #4ad5ab;
+}
+
+#ls-link:hover {
+    color: #2bae86;
 }

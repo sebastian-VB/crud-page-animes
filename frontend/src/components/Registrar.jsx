@@ -5,7 +5,7 @@ function Registro(){
 
   return(
     <div>
-
+      Registrar
     </div>
   );
 

@@ -10,15 +10,18 @@ import ListarUsuarios from '../components/ListarUsuarios';
 import AgregarUsuarios from '../components/AgregarUsuarios';
 import PerfilUsuario from '../components/PerfilUsuario'
 import Login from '../components/Login';
+import Registro from '../components/Registrar';
+import PrincipalAdmin from '../components/PrincipalAdmin';
+import PrincipalUser from '../components/PrincipalUser';
 
 function RoutesApp(){
 
-  const role = 'admin';
-
   const [login, setLogin] = useState(true);
+  const [adminOuser, setAdminOuser] = useState('');
 
-  const updateLogin = (activar)=>{
-    setLogin(activar)
+  const updateLogin = (activar, aoru)=>{
+    setLogin(activar);
+    setAdminOuser(aoru)
   }
 
   return(
@@ -28,14 +31,17 @@ function RoutesApp(){
           {
             login 
             ?
-              <Route path='/' element={ <Login /> } >
+              <Route path='/' element={ <Login loginF={updateLogin}/> } >
+
+                <Route path='registrar' element={ <Registro /> } /> 
                 <Route path='*' element={ <Navigate replace to='/' /> } /> 
               </Route>
             :
-              role === 'admin'
+              adminOuser === 'admin'
               ?
                 <Route path='/' element={ <NavBarAdmin /> }>
 
+                  <Route path='/' element={ <PrincipalAdmin /> } />
                   <Route path='listar-animes-ad' element={ <ListarAnimes /> } />
                   <Route path='agregar-animes-ad' element={ <AgregarAnimes /> } />
                   <Route path='modificar-animes-ad/:id' element={ <ActualizarAnimes /> } />
@@ -51,6 +57,7 @@ function RoutesApp(){
               :
                 <Route path='/' element={ <NavBarUser /> }>
 
+                  <Route path='/' element={ <PrincipalUser /> } />
                   <Route path='/listar-animes-us' element={ <ListarAnimes /> } />
                   <Route path='/perfil-us' element={ <PerfilUsuario /> } />
 
@@ -60,31 +67,6 @@ function RoutesApp(){
           }
         </Routes>  
       </BrowserRouter>
-
-      {/* <BrowserRouter>
-        <Routes>
-
-          <Route path='/' element={ <Login /> } >
-
-            <Route path='/ad' element={ <NavBarAdmin /> } />
-            <Route path='/ad/listar-animes-ad' element={ <ListarAnimes /> } />
-            <Route path='/ad/agregar-animes-ad' element={ <AgregarAnimes /> } />
-            <Route path='/ad/modificar-animes-ad/:id' element={ <ActualizarAnimes /> } />
-            <Route path='/ad/listar-usuarios-ad' element={ <ListarUsuarios /> } />
-            <Route path='/ad/agregar-usuarios-ad' element={ <AgregarUsuarios /> } />
-            <Route path='/ad/agregar-usuarios-ad' element={ <AgregarUsuarios /> } />
-
-
-            <Route path='/us' element={ <NavBarUser /> } />
-            <Route path='/us/listar-animes-us' element={ <ListarAnimes /> } />
-            <Route path='/us/perfil-us' element={ <PerfilUsuario /> } />
-
-
-            <Route path='*' element={ <Navigate replace to='/' /> } /> 
-          </Route>
-
-        </Routes>  
-      </BrowserRouter> */}
       
     </div>
   );
