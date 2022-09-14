@@ -14,10 +14,11 @@ CREATE TABLE `users`(
 );
 
 select * from `users`;
+select * from `animes`;
 
 # se crea la tabla de animes
 CREATE TABLE `animes`(
-	id int primary key not null,
+	id int primary key auto_increment not null,
     titulo text unique,
     descripcion text,
     imagen text,
