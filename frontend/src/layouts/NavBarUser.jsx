@@ -22,14 +22,16 @@ function NavBarUser ({ userName }){
               <li className="nav-item">
                 <Link className='nav-link text-white' to="/perfil-us" id='linkNav'>PERFIL</Link>
               </li>
-              <li className="nav-item">
-                <a className='nav-link text-white' href="http://localhost:3000/" id='linkNav'>SALIR</a>
-              </li>
             </ul>
 
-            <div className='userC'>
-              <div className='userName'>{ userName }</div>
-              <div className='active'></div>
+            <div className='contR'>
+              <div className='userC'>
+                <div className='userName'>{ userName }</div>
+                <div className='active'></div>
+              </div>
+              <a className='nav-link text-white' href="http://localhost:3000/" id='linkNav'>
+                <i class="fa-solid fa-right-to-bracket"></i>
+              </a>
             </div>
 
           </div>

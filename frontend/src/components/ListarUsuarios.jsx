@@ -35,37 +35,38 @@ function ListarUsuarios(){
   return(
     <div>
       <h1 className='titulos'>Listar Usuarios</h1>
-      {
-        users !== null
-        ?
-          users.map(user =>(
+      <div className='p-5 listUsuario-back' >
+        <div className='containerListUsuarios'>
+          {
+          users !== null
+          ?
+            users.map(user =>(
 
-            user.rol !== 'admin'
-            ?
-              <div className='p-5 listUsuario-back' key={user.id}>
-                <div className='containerListUsuarios'>
-                  <div className='row-container'>
-                    <div className='imageUsuario'>
-                      <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt='' />
-                    </div>
-                    <div className='content'>
-                      <h5>Nombre: <span>{user.nombre}</span></h5>
-                      <h5>Usuario: <span>{user.usuario}</span></h5>
-                      <div className="buttons">
-                        <button onClick={()=> getNameId(user.id, user.nombre)} className='btn btn-danger' data-bs-toggle="modal" data-bs-target="#modalConfirm">Eliminar <i className="fa-sharp fa-solid fa-trash"></i></button>
-                      </div>
-                    </div>
-                    <div className='bannerUsuario'>
+              user.rol !== 'admin'
+              ?
+                <div className='row-container' key={user.id}>
+                  <div className='imageUsuario'>
+                    <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt='' />
+                  </div>
+                  <div className='content'>
+                    <h5>Nombre: <span>{user.nombre}</span></h5>
+                    <h5>Usuario: <span>{user.usuario}</span></h5>
+                    <div className="buttons">
+                      <button onClick={()=> getNameId(user.id, user.nombre)} className='btn btn-danger' data-bs-toggle="modal" data-bs-target="#modalConfirm">Eliminar <i className="fa-sharp fa-solid fa-trash"></i></button>
                     </div>
                   </div>
+                  <div className='bannerUsuario'>
+                  </div>
                 </div>
-              </div>
-            :
-              ''
-          ))
-        :
-          ''
-      }
+              :
+                ''
+            ))
+          :
+            ''
+        }
+        </div>
+      </div>
+      
 
       <div className="modal fade" id="modalConfirm" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div className="modal-dialog">

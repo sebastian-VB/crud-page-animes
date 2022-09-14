@@ -4,7 +4,7 @@ import app from './app.js';
 
 try{
     await connection.authenticate();
-    console.log('¡¡Conexcion a la BD exitosa!!');
+    console.log('¡¡Conexion a la BD exitosa!!');
 
 }catch(error){
     console.log(`El error de conexión es: ${error}`);

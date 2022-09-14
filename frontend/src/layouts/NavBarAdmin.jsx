@@ -14,6 +14,7 @@ function NavBarAdmin (){
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
+
             <ul className="navbar-nav ">
               <li className="nav-item">
                 <Link className='nav-link text-white' to="/listar-animes-ad" id='linkNav'>LISTAR ANIMES</Link>
@@ -24,10 +25,13 @@ function NavBarAdmin (){
               <li className="nav-item">
                 <Link className='nav-link text-white' to="/listar-usuarios-ad" id='linkNav'>LISTAR USUARIOS</Link>
               </li>
-              <li className="nav-item">
-                <a className='nav-link text-white' href="http://localhost:3000/" id='linkNav'>Salir</a>
-              </li>
             </ul>
+
+            <div>
+              <a className='nav-link text-white' href="http://localhost:3000/" id='linkNav'>
+                <i class="fa-solid fa-right-to-bracket"></i>
+              </a>
+            </div>
           </div>
         </div>
       </nav>
