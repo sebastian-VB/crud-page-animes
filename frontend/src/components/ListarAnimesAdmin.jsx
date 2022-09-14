@@ -43,7 +43,7 @@ function ListarAnimesAdmin(){
               <div className='containerListAnime'>
                   <div className='row-container'>
                       <div className='image'>
-                          <a href='#'>
+                          <a href='#' >
                               <img src={anime.imagen} alt= '' />
                           </a>
                       </div>

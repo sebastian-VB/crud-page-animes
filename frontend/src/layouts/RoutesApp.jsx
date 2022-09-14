@@ -51,9 +51,6 @@ function RoutesApp(){
                   <Route path='modificar-animes-ad/:id' element={ <ActualizarAnimes /> } />
 
                   <Route path='listar-usuarios-ad' element={ <ListarUsuarios /> } />
-                  <Route path='agregar-usuarios-ad' element={ <AgregarUsuarios /> } />
-
-                  <Route path='agregar-usuarios-ad' element={ <AgregarUsuarios /> } />
 
                   <Route path='*' element={ <Navigate replace to='/' /> } /> 
                 

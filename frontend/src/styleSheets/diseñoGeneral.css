@@ -447,3 +447,94 @@
     background-size: cover;
   }
 
+/*?-----------PERFIL USUARIO---------*/
+
+.perfilUsuario-back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.container-perfil {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 85%;
+  background-color: #26243761;
+}
+
+.img-Perfil {
+  padding: 50px 0;
+  background-image: url(../images/banner-perfil.png);
+  width: 100%;
+  text-align: center;
+}
+
+.img-Perfil img {
+  border-radius: 50%;
+  width: 150px;
+  box-shadow: 1px 1px 10px #0c0a18;
+}
+
+.content-perfil {
+  display: flex;
+  justify-content: space-around;
+}
+
+.info-perfil {
+  text-align: left;
+}
+
+.info-perfil h5 {
+  margin-top: 40px;
+  color: #2bae87;
+}
+
+.info-perfil span {
+  font-weight: 300;
+  color: #fff;
+  margin-left: 8px;
+}
+
+.detallesP {
+  background-color: #3b385661;
+  padding: 8px 0;
+  width: 100%;
+  text-align: center;
+}
+
+.detallesP p {
+  margin: 0;
+}
+
+.button-perfil {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+/* MODAL PERFIL USUARIO*/
+.body-perfil {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 15px 30px;
+}
+
+.body-perfil p {
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.inp-perfil {
+  margin-bottom: 15px;
+  padding: 3px 8px;
+  width: 245%;
+  background-color: #fff8;
+  border: none;
+  border-radius: 10px;
+  color: #000;
+  outline: none;
+}
+

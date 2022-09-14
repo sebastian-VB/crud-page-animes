@@ -134,11 +134,9 @@ const deleteUser = (req, res)=>{
 const updateUser = (req, res)=>{
     
     const {id} = req.params;
-    const { nombre, usuario, contrasena } = req.body;
+    const { nombre, usuario } = req.body;
 
-    let passwordH = bcrypt.hashSync(contrasena, Number.parseInt(config.rounds));
-
-    UserModel.update({ nombre, usuario, contrasena: passwordH }, {
+    UserModel.update({ nombre, usuario }, {
         where: { id: id }
 
     }).then(user =>{

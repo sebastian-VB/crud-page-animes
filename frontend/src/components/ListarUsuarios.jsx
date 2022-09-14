@@ -46,7 +46,7 @@ function ListarUsuarios(){
                 <div className='containerListUsuarios'>
                   <div className='row-container'>
                     <div className='imageUsuario'>
-                      <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" />
+                      <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt='' />
                     </div>
                     <div className='content'>
                       <h5>Nombre: <span>{user.nombre}</span></h5>

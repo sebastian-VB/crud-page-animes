@@ -50,7 +50,6 @@ function ActualizarAnimes(){
           <div className="mb-3 w-100 d-flex flex-column align-items-start">
             <label for="inputDesc" className="form-label">Descripcin</label>
             <textarea className="form-control" id="inputDesc" required onChange={ e=> setDescripcion(e.target.value)} value={descripcion} />
-            {/* <input type="text" className="form-control " id="inputDesc" required /> */}
           </div>
           <div className="mb-3 w-100 d-flex flex-column align-items-start">
             <label for="inputImage" className="form-label">Imagen</label>

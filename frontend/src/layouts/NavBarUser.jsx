@@ -9,7 +9,7 @@ function NavBarUser ({ userName }){
     <>
       <nav className="navbar navbar-expand-lg w-100 navBarMenu">
         <div className="container-fluid">
-          <Link className="navbar-brand text-white"to='/' id='linkNav'>USER</Link>
+          <Link className="navbar-brand text-white" to='/' id='icon'></Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
