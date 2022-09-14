@@ -9,6 +9,8 @@ function PerfilUsuario ({ idUser }){
 
   //funcion para actualizar usuario
 
+  //listar usuario
+
   return(
     <div>
       PerfilUsuario {idUser}

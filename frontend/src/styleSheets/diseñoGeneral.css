@@ -131,7 +131,7 @@
     grid-template-columns: 40% 60%;
     background-color: #0c0a18e6;
     height: 70%;
-    width: 50%;
+    width: 60%;
 }
 
 .ls-container-2 {
@@ -146,7 +146,7 @@
     background-image: url(../images/login-banner.gif);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: -19em;
+    background-position: -23em;
 }
 
 .ls-banner-2 {
@@ -268,3 +268,72 @@
 #ls-link:hover {
     color: #2bae86;
 }
+
+/*?------------------- LISTAR ANIME----------------*/
+
+.containerListAnime {
+    margin-top: 20px;
+    color: #fff;
+  }
+  
+  .containerListAnime .row-container {
+    background-color: #26243761;
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    padding: 30px 15px;
+    margin-bottom: 5px;
+  }
+  
+  .image img {
+    border-radius: 5px;
+  }
+
+.titulos{
+    text-align: center;
+    margin-top: 10px;
+}
+  
+  .content {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+    gap: 10%;
+  }
+  
+  .content h2 {
+    color: #ff8826;
+    font-weight: 600;
+  }
+  
+  .content h4 {
+    color: #9b9285;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 3%;
+  }
+  
+  #modelDialog {
+    background-color: #201b3a;
+  }
+  
+  #modalHeader {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 5px 0 15px;
+  }
+  
+  #btnclose {
+    background-color: #fff;
+  }
+  
+  #modalFooter {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 15px;
+    gap: 10px;
+  }

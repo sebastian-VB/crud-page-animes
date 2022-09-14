@@ -1,18 +1,22 @@
 
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+
 import NavBarAdmin from './NavBarAdmin';
-import NavBarUser from './NavBarUser';
-import ListarAnimes from '../components/ListarAnimes';
+import PrincipalAdmin from '../components/PrincipalAdmin';
+import ListarAnimesAdmin from '../components/ListarAnimesAdmin';
 import AgregarAnimes from '../components/AgregarAnimes';
 import ActualizarAnimes from '../components/ActualizarAnimes';
 import ListarUsuarios from '../components/ListarUsuarios';
 import AgregarUsuarios from '../components/AgregarUsuarios';
-import PerfilUsuario from '../components/PerfilUsuario'
+
 import Login from '../components/Login';
 import Registro from '../components/Registrar';
-import PrincipalAdmin from '../components/PrincipalAdmin';
+
+import NavBarUser from './NavBarUser';
 import PrincipalUser from '../components/PrincipalUser';
+import PerfilUsuario from '../components/PerfilUsuario'
+import ListarAnimesUser from '../components/ListarAnimesUser';
 
 function RoutesApp(){
 
@@ -42,7 +46,7 @@ function RoutesApp(){
                 <Route path='/' element={ <NavBarAdmin /> }>
 
                   <Route path='/' element={ <PrincipalAdmin /> } />
-                  <Route path='listar-animes-ad' element={ <ListarAnimes /> } />
+                  <Route path='listar-animes-ad' element={ <ListarAnimesAdmin /> } />
                   <Route path='agregar-animes-ad' element={ <AgregarAnimes /> } />
                   <Route path='modificar-animes-ad/:id' element={ <ActualizarAnimes /> } />
 
@@ -58,7 +62,7 @@ function RoutesApp(){
                 <Route path='/' element={ <NavBarUser  userName={adminOuser.nombre} /> }>
 
                   <Route path='/' element={ <PrincipalUser /> } />
-                  <Route path='/listar-animes-us' element={ <ListarAnimes /> } />
+                  <Route path='/listar-animes-us' element={ <ListarAnimesUser /> } />
                   <Route path='/perfil-us' element={ <PerfilUsuario idUser={adminOuser.id} /> } />
 
                   <Route path='*' element={ <Navigate replace to='/' /> } /> 
