@@ -337,3 +337,13 @@
     padding: 10px 0 15px;
     gap: 10px;
   }
+
+/*?------------AGREGAR ANIMES-------*/
+
+.agrAnime-back {
+    background-image: url(../images/agr-Anime.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 95vh;
+}
+

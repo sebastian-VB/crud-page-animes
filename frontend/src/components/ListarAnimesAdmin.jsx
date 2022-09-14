@@ -55,7 +55,7 @@ function ListarAnimesAdmin(){
                               </p>
                           </div>
                           <div className="buttons">
-                              <Link to='/modificar' className='btn btn-warning'>Actualizar <i className="fa-solid fa-pen-to-square"></i></Link>
+                              <Link to={`/modificar-animes-ad/${anime.id}`} className='btn btn-warning'>Actualizar <i className="fa-solid fa-pen-to-square"></i></Link>
                               {/* <button className='btn btn-warning'>Actualizar <i className="fa-solid fa-pen-to-square"></i></button> */}
                               <button onClick={()=> getNameId(anime.id, anime.titulo)} className='btn btn-danger' data-bs-toggle="modal" data-bs-target="#modalConfirm">Eliminar <i className="fa-sharp fa-solid fa-trash"></i></button>
                           </div>
