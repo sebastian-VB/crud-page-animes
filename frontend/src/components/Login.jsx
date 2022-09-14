@@ -100,7 +100,7 @@ function Login({ loginF }){
                 <div className='ls-banner-2'></div>
                   <div className='ls-info'>
                       <div className='ls-data ls-data2'>
-                          <form id='forRegistrar' onSubmit={registerUser}>
+                          <form id='forRegistrar' onSubmit={registerUser} >
                               <div className='username div-input'>
                                   <i className="fa-solid fa-user"></i>
                                   <input className='ls-inp' type="text" name="username" placeholder='username' required onChange={ e=>setNombreR(e.target.value)} value={nombreR} />

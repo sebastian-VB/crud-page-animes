@@ -74,7 +74,8 @@ const listUser = (req, res)=>{
             users.push({
                 id: userOnly.id,
                 nombre: userOnly.nombre,
-                usuario: userOnly.usuario
+                usuario: userOnly.usuario,
+                rol: userOnly.rol
             });
         });
 

@@ -386,3 +386,64 @@
     color: #fff;
   }
 
+/*?--------LISTAR USUARIOS-------*/
+
+.btn {
+    border-radius: 40px !important;
+  }
+  
+  .listUsuario-back {
+    height: 40vh;
+  }
+  
+  .containerListUsuarios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    color: #fff;
+  }
+  
+  .containerListUsuarios .row-container {
+    background-color: #26243761;
+    display: grid;
+    grid-template-columns: 20% 40% 30%;
+    width: 60%;
+    gap: 5%;
+    margin-bottom: 15px;
+  }
+  
+  .imageUsuario {
+    background-color: #2bae8748;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin: 30px;
+  }
+  
+  .imageUsuario:hover {
+    background-color: #ff933b48;
+  }
+  
+  .imageUsuario img {
+    margin-top: 14px;
+    margin-left: 14px;
+    width: 120px;
+  }
+  
+  .content span {
+    font-size: 18px;
+    font-weight: 300;
+    color: #fff;
+  }
+  
+  .content h5 {
+    color: #2bae87;
+  }
+  
+  .bannerUsuario {
+    background-image: url(../images/user-banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
