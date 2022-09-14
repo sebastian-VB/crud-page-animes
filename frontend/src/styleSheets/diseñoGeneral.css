@@ -347,3 +347,42 @@
     height: 95vh;
 }
 
+/*?---------ACTUALIZAR ANIME-------*/
+
+.actAnime-back {
+    background-image: url(../images/act-Anime.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 95vh;
+  }
+  
+  .titulos {
+    color: #c6c6c6;
+  }
+  
+  #inputNombre,
+  #inputDesc,
+  #inputImage {
+    background-color: #fffa;
+    border: none;
+    border-radius: 10px;
+    color: #000;
+  }
+  
+  #inputDesc {
+    max-height: 140px;
+  }
+  
+  #btns {
+    background-color: #3f3663;
+    border: 1px solid #4a4366;
+    border-radius: 40px;
+    color: #c6c6c6;
+    margin: 0 auto;
+  }
+  
+  #btns:hover {
+    background-color: #2d2746;
+    color: #fff;
+  }
+
