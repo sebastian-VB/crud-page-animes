@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import "../styleSheets/diseñoGeneral.css";
 import Anime from "./Anime";
 import ModalDialog from "./ModalDialog";
