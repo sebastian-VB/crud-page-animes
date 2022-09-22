@@ -52,7 +52,7 @@ const addAnime = (req, res)=>{
 
     const { titulo, descripcion, imagen } = req.body;
 
-    if(!titulo || !descripcion || !imagen) return res.status(404).json({ msg: 'Flata información' });
+    if(!titulo || !descripcion || !imagen) return res.status(404).json({ msg: 'Falta información' });
 
     AnimeModel.create({
         titulo,

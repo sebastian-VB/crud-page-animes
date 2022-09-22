@@ -23,20 +23,13 @@ function ListarAnimesUser() {
       <h1 className="titulos">Listar Animes</h1>
       {animes !== null
         ? animes.map((anime) => (
-            <div
-              className="container-fluid p-5 containerPrincipalP"
-              key={anime.id}
-            >
-              <div className="containerListAnime">
-                <Anime
-                  userType={0}
-                  id={anime.id}
-                  imagen={anime.imagen}
-                  titulo={anime.titulo}
-                  descripcion={anime.descripcion}
-                />
-              </div>
-            </div>
+            <Anime
+              userType={0}
+              id={anime.id}
+              imagen={anime.imagen}
+              titulo={anime.titulo}
+              descripcion={anime.descripcion}
+            />
           ))
         : ""}
     </div>
